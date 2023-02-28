@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Diego Luiz">
+  <meta name="description"
+    content="A responsive, mobile first e-commerce product page built according to the challenge by Frontend Mentor, using HTML, CSS and Javascript">
+  <meta name="keywords"
+    content="html, css, javascript, e-commerce, product, page, challenge, frontend mentor, frontend, web developer, responsive, mobile first">
+  <!-- <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png"> -->
+  <!-- <link rel="stylesheet" href="css/normalize.css"> -->
+  <link rel="stylesheet" href="assets/css/product_main.css">
+  
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <!-- <script src="js/focusable-lightbox.js"></script>  -->
+  <script src="assets/js/product_main.js" defer></script>
+
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+  <title>Product Page</title>
+</head>
+
+<body>
+
+  <header class="top-header">
+
+    <div class="top-header__left">
+      <button class="nav-btn" type="button" aria-controls="main-nav" aria-expanded="false">
+        <span class="sr-only">Menu button</span>
+        <img src="images/icon-menu.svg" alt="" role="presentation">
+      </button>
+
+      <nav class="main-nav" id="main-nav" aria-label="Main menu">
+        <div class="main-nav__content-container">
+          <button class="main-nav__close-btn" type="button">
+            <span class="sr-only">Close menu</span>
+            <span class="icon icon-close" aria-hidden="true"></span>
+          </button>
+
+        </div>
+      </nav>
+    </div>
+    <div class="hider" style="display: none;">
+      <div class="top-header__right">
+        <button class="top-header__btn-cart" type="button" aria-controls="cart-section" aria-expanded="false">
+          <span class="sr-only">Button cart</span>
+          <span class="icon icon-cart" aria-hidden="true"></span>
+          <span class="items-quantity">
+            <span class="value">0</span><span class="sr-only">items</span>
+          </span>
+        </button>
+        <!-- <button class="user-container" type="button" aria-label="User section">
+        <img src="images/image-avatar.png" alt="" class="user-container__img" role="presentation">
+      </button> -->
+      </div>
+
+      <section class="cart-section" id="cart-section" aria-live="polite">
+        <h3 class="cart-section__title">Cart</h3>
+        <div class="cart-section__body">
+          <p class="empty-msg">Your cart is empty.</p>
+          <ul class="cart-section__products"></ul>
+          <button type="button" class="cart-section__btn-checkout">Checkout</button>
+        </div>
+      </section>
+    </div>
+  </header>
+
+  <!-- <section class="cart-section" id="cart-section" aria-live="polite">
+    <h3 class="cart-section__title">Cart</h3>
+    <div class="cart-section__body">
+      <p class="empty-msg">Your cart is empty.</p>
+      <ul class="cart-section__products"></ul>
+      <button type="button" class="cart-section__btn-checkout">Checkout</button>
+    </div>
+  </section> -->
+
+  <main>
+    <article class="product">
+      <section class="product__slider default-container" aria-label="Product preview">
+        <button type="button" class="product__slider___btn-close-lightbox">
+          <span class="sr-only">Close lightbox</span>
+          <span class="icon icon-close" aria-hidden="true"></span>
+        </button>
+        <div class="image-box" aria-label="Product preview" role="region">
+          <button type="button" class="btn-previousImage">
+            <span class="sr-only">Previous Image</span>
+            <span class="icon icon-previous" aria-hidden="true"></span>
+          </button>
+          <button type="button" class="btn-nextImage">
+            <span class="sr-only">Next Image</span>
+            <span class="icon icon-next" aria-hidden="true"></span>
+          </button>
+          <img src="images/Products/Product 1/image-product-1.jpg" alt="Brown and white sneaker" class="image-box__src"
+            data-product-id="item-cart-1" tabindex="0" aria-controls="lightbox" aria-expanded="false">
+        </div>
+
+        <ul class="product__thumbs default-container" aria-label="Product thumbnails">
+          <li class="thumb-item">
+            <button type="button" class="thumb-item__btn" aria-label="change to image 1">
+              <img src="images/Products/Product 1/image-product-1-thumbnail.jpg" alt="" data-thumb-index="0" role="presentation">
+            </button>
+          </li>
+          <li class="thumb-item">
+            <button type="button" class="thumb-item__btn" aria-label="change to image 2">
+              <img src="images/Products/Product 1/image-product-2-thumbnail.jpg" alt="" data-thumb-index="1" role="presentation">
+            </button>
+          </li>
+          <li class="thumb-item">
+            <button type="button" class="thumb-item__btn" aria-label="change to image 3">
+              <img src="images/Products/Product 1/image-product-3-thumbnail.jpg" alt="" data-thumb-index="2" role="presentation">
+            </button>
+          </li>
+          <li class="thumb-item">
+            <button type="button" class="thumb-item__btn" aria-label="change to image 4">
+              <img src="images/Products/Product 1/image-product-4-thumbnail.jpg" alt="" data-thumb-index="3" role="presentation">
+            </button>
+          </li>
+        </ul>
+      </section>
+      <section class="product__content default-container" aria-label="Product content">
+        <header>
+          <h2 class="company-name" tabindex="0">Sneaker Company</h2>
+          <p class="product__name" tabindex="0">Autumn Limited Edition Sneakers</p>
+          <h3 class="product__title" tabindex="0">Fall Limited Edition Sneakers</h3>
+        </header>
+        <p class="product__description" tabindex="0">
+          These low-profile sneakers are your perfect casual wear companion. Featuring a
+          durable rubber outer sole, they’ll withstand everything the weather can offer.
+        </p>
+        <div class="product__price">
+          <div class="discount-price">
+            <p class="discount-price__value" tabindex="0">
+              LKR. 125.00
+              <span class="sr-only">dollars</span>
+            </p>
+            <p class="discount-price__discount" tabindex="0">50%</p>
+          </div>
+          <div class="full-price">
+            <p tabindex="0">
+              LKR. 250.00
+              <span class="sr-only">dollars</span>
+            </p>
+          </div>
+        </div>
+
+        <form action="#" class="cart-form">
+          <div class="cart-form__input-container" aria-label="Define the product quantity">
+            <button type="button" class="btn-changeValue minus-item">
+              <span class="sr-only">Minus one item</span>
+              <span class="icon icon-minus" aria-hidden="true"></span>
+            </button>
+            <label for="product__quantity" class="sr-only">Set the quantity manually</label>
+            <input type="number" min="0" value="0" id="product__quantity">
+            <button type="button" class="btn-changeValue plus-item">
+              <span class="sr-only">Plus one item</span>
+              <span class="icon icon-plus" aria-hidden="true"></span>
+            </button>
+          </div>
+          <button type="button" class="cart-form__add-btn" data-toggle="modal" data-target="#orderNow">
+            <span class="icon icon-cart" aria-hidden="true"></span>
+            Order Now
+          </button>
+          <!-- <button type="button" class="cart-form__add-btn">
+            <span class="icon icon-cart" aria-hidden="true"></span>
+            Add to cart
+          </button> -->
+        </form>
+
+        <div class="modal fade" id="orderNow" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Buying Form</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form name="contactform" id="contactform" enctype="text/plain"
+          action="https://docs.google.com/forms/d/e/1FAIpQLSe3Vt2HA7Zb2RrPuMUQOTniRiRSDCL8yzn21m9diMLFTWEUhg/formResponse?usp=pp_url"
+          target="hidden_iframe" onsubmit=" submitted=true;">
+                  <div class="form-group">
+                    <label for="name" class="col-form-label">Recipient name</label>
+                    <input type="text" class="form-control" name="entry.811665510" id="name">
+                  </div>
+                  <div class="form-group">
+                    <label for="contact-number" class="col-form-label">Contact number</label>
+                    <input type="text" class="form-control" name="entry.909384532" id="contact-number">
+                  </div>
+                  <div class="form-group">
+                    <label for="address" class="col-form-label">Address</label>
+                    <textarea class="form-control" name="entry.2137563631" id="address"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="nearest-city" class="col-form-label">Nearest city</label>
+                    <input type="text" class="form-control" id="nearest-city">
+                  </div>
+                  <div class="modal-footer">
+                  <input type="reset" value="Clear" class="primary" />
+                  <input type="submit" value="Send Message" class="primary"/>
+                  </div>
+                </form>
+                <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
+              </div>
+              <!-- <div class="modal-footer"> -->
+                <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <input type="submit" value="Send Message" class="primary" /> -->
+                <!-- <button type="button" class="btn btn-primary" type="submit" value="Submit" >Send message</button> -->
+              <!-- </div> -->
+            </div>
+          </div>
+        </div>
+
+        
+
+      </section>
+    </article>
+  </main>
+
+  <div class="lightbox" id="lightbox" role="dialog"></div>
+  <!-- Scripts -->
+  <script src="assets/js/slider.js"></script>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrolly.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script type="text/javascript">
+    $('#orderNow').on('submit', function (e) {
+      $("[data-dismiss=modal]").trigger({ type: "click" });
+      window.location.href = "http://www.google.com";
+    });
+  </script>
+
+  
+</body>
+
+</html>
